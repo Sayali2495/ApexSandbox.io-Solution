@@ -3,7 +3,7 @@ public Id insertStudent(String name, String email) {
     stu.Name = name;
     stu.apxio__Email__c = email;
     insert stu;
-    List<apxio__Student__c> stuList = [Select id from apxio__Student__c where apxio__Email__c=:email];
+    List<apxio__Student__c> stuList = [Select id,Name,apxio__Email__c from apxio__Student__c where apxio__Email__c=:email];
     if(stuList>0){
     return stuList[0].id;
     }
