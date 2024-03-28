@@ -2,9 +2,9 @@ public Id insertStudent(String name, String email) {
     apxio__Student__c stu = new apxio__Student__c();
     stu.Name = name;
     stu.apxio__Email__c = email;
-    Id result = insert stu;
+    insert stu;
     List<apxio__Student__c> stuList = [Select id,Name,apxio__Email__c from apxio__Student__c where apxio__Email__c=:email];
     
-    return result;
+    return stuList[0].id;
     
 }
