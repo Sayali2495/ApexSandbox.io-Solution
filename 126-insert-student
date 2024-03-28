@@ -4,7 +4,7 @@ public Id insertStudent(String name, String email) {
     stu.apxio__Email__c = email;
     insert stu;
     id recordid = [select id from apxio__Student__c where Name=:name]
-    id recordid = [select id from apxio__Student__c where Name=:name]
-    return ;
+    
+    return recordid;
     
 }
